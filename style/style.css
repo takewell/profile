@@ -1,0 +1,69 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 0;
+    margin:0;
+    color: #222;
+}
+
+#header-site {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #fff;
+  background: black url(../images/mv.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+#header-site #header-site-inner {
+  padding: 40px 30px 60px 30px;
+  position: relative;
+  max-width: 639px;
+  margin: auto;
+}
+
+#header-site #header-site-inner h1 {
+  text-shadow: 0 1px 5px black;
+  font-size: 300%;
+  line-height: 1.4;
+  color: #fff;
+}
+
+#header-site #header-site-inner h1 span {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+nav {
+  list-style: none;
+  overflow: hidden;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav li {
+  width: 60px;
+  text-align: center;
+  float: left;
+  height: 60px;
+  margin-right: 8px;
+  margin-top: 8px;
+  list-style: none;
+  background-color: #f6f6f6;
+  border-radius: 13%;
+}
+
+nav li a {
+  margin: 5px;
+  display:block;
+}
+
+nav li :hover {
+  opacity: 0.7;
+}
+
+i {
+  font-size: 3rem;
+}

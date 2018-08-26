@@ -1,0 +1,22 @@
+{
+  "name": "profile",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "makehtml": "pug index.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takewell/profile.git"
+  },
+  "keywords": [
+    "takewell"
+  ],
+  "author": "takewell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takewell/profile/issues"
+  },
+  "homepage": "https://github.com/takewell/profile#readme"
+}
