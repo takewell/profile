@@ -1,10 +1,10 @@
 [build]
   base = "/"
   publish = "out/"
-  command = "yarn run build && yarn run export"
+  command = "npm run build && npm run export"
 
 [context.production]
-  command = "NODE_ENV=production yarn run build && yarn run export"
+  command = "NODE_ENV=production npm run build && npm run export"
 
 [[redirects]]
   from = "/*"
