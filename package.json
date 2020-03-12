@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pug index.pug"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/takewell/profile/issues"
   },
-  "homepage": "https://github.com/takewell/profile#readme"
+  "homepage": "https://github.com/takewell/profile#readme",
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.9.0"
+  }
 }
