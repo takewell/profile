@@ -1,3 +1,12 @@
 [build]
-  command = "npm build && npm export"
-  publish = "out"
+  base = "/"
+  publish = "out/"
+  command = "yarn run build && yarn run export"
+
+[context.production]
+  command = "NODE_ENV=production yarn run build && yarn run export"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
