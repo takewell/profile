@@ -13,7 +13,7 @@ const Index = ({ links }) => (
         <h1>
           @takewell
           <span>
-            武井 勇也 (TAKEI Yuya) 1996.05.01 愛媛県松山市育ち、身分は学生です。
+            武井 勇也 (TAKEI Yuya) 1996.5.1 愛媛県松山市育ち、お仕事は千葉市のアパレル系のサイトを作ってます。
           </span>
         </h1>
         <nav>
