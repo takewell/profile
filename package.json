@@ -1,6 +1,6 @@
 {
   "name": "profile",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,9 @@
   "homepage": "https://github.com/takewell/profile#readme",
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.4.0",
+    "@zeit-ui/react": "^1.8.0",
+    "@zeit-ui/react-prism": "^1.0.1",
+    "ms": "^2.1.2",
     "next": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
