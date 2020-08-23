@@ -1,10 +1,40 @@
 import {
-  FaRegEnvelope,
-  FaGithub,
-  FaTwitter,
-  FaFacebook,
-  FaInstagram
-} from "react-icons/fa";
+  Github,
+  Instagram,
+  Twitter,
+  Facebook,
+  Bold,
+  Mail,
+} from "@zeit-ui/react-icons";
+
+const ServiceItem = ({ i, item }) => {
+  return (
+    <li key={i}>
+      <a href={item.href} target="_blank">
+        {i === 0 && <Mail size={48} color="black" />}
+        {i === 1 && <Bold size={48} color="black" />}
+        {i === 2 && <Github size={48} color="black" />}
+        {i === 3 && <Twitter size={48} color="#1DA1F2" />}
+        {i === 4 && <Facebook size={48} color="#4267B2" />}
+        {i === 5 && <Instagram size={48} color="#E1306C" />}
+        {i === 6 && (
+          <>
+            <img
+              src="images/qiita.png"
+              style={{ width: "48px", height: "48px" }}
+            />
+          </>
+        )}
+        {i === 7 && (
+          <img
+            src="images/note_logo.png"
+            style={{ width: "47px", height: "47px" }}
+          />
+        )}
+      </a>
+    </li>
+  );
+};
 
 const Index = ({ links }) => (
   <div>
@@ -13,62 +43,14 @@ const Index = ({ links }) => (
         <h1>
           @takewell
           <span>
-            武井 勇也 (TAKEI Yuya) 1996.5.1 愛媛県松山市育ち、千葉市のファッションテックの会社で働いてます。
+            武井 勇也 (TAKEI Yuya) 1996.5.1
+            愛媛県松山市育ち、千葉市のファッションテックの会社で働いてます。
           </span>
         </h1>
         <nav>
           <ul>
             {links.map((item, i) => {
-              const Component = item.c;
-              return (
-                <li key={i}>
-                  <a href={item.href} target="_blank">
-                    {i === 0 && (
-                      <FaRegEnvelope style={{ color: "#505050" }} size="3em" />
-                    )}
-                    {i === 1 && (
-                      <img
-                        src="../images/blog.takewell.png"
-                        alt="blog.takewell"
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    )}
-                    {i === 2 && (
-                      <FaGithub
-                        style={{ color: "#24292e", backgroudColor: "#24292e" }}
-                        size="3em"
-                      />
-                    )}
-                    {i === 3 && (
-                      <FaTwitter style={{ color: "#1da1f2" }} size="3em" />
-                    )}
-                    {i === 4 && (
-                      <FaFacebook style={{ color: "#4267b2" }} size="3em" />
-                    )}
-                    {i === 5 && (
-                      <FaInstagram style={{ color: "#000" }} size="3em" />
-                    )}
-                    {i === 6 && (
-                      <img
-                        src="../images/qiita-favicon.png"
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    )}
-                    {i === 7 && (
-                      <img
-                        src="../images/note_logo.png"
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    )}
-                    {i === 8 && (
-                      <img
-                        src="../images/shuffle-list.png"
-                        style={{ width: "100%", height: "100%" }}
-                      />
-                    )}
-                  </a>
-                </li>
-              );
+              return <ServiceItem i={i} item={item} key={i} />;
             })}
           </ul>
         </nav>
@@ -80,32 +62,29 @@ const Index = ({ links }) => (
 Index.getInitialProps = () => {
   const links = [
     {
-      href: "mailto:takewell.dev@gmail.com"
+      href: "mailto:takewell.dev@gmail.com",
     },
     {
-      href: "https://blog.takewell.dev"
+      href: "https://blog.takewell.dev",
     },
     {
-      href: "https://github.com/takewell"
+      href: "https://github.com/takewell",
     },
     {
-      href: "https://twitter.com/takewell_"
+      href: "https://twitter.com/takewell_",
     },
     {
-      href: "https://www.facebook.com/profile.php?id=100009877623537"
+      href: "https://www.facebook.com/profile.php?id=100009877623537",
     },
     {
-      href: "https://www.instagram.com/yuyatakei/?hl=ja"
+      href: "https://www.instagram.com/yuyatakei/?hl=ja",
     },
     {
-      href: "https://qiita.com/takewell"
+      href: "https://qiita.com/takewell",
     },
     {
-      href: "https://note.mu/takewell"
+      href: "https://note.mu/takewell",
     },
-    {
-      href: "https://www.shuffle-list.takewell.dev/takewell_"
-    }
   ];
 
   return { links };
