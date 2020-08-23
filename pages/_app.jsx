@@ -20,7 +20,7 @@ const Application = ({ Component, pageProps }) => {
     if (typeof localStorage !== "object") return null;
     const themeType = localStorage.getItem("theme");
     console.log("theme", themeType);
-    setThemeType(themeType === "dark" ? "dark" : "light");
+    setThemeType(themeType === "light" ? "light" : "dark");
   }, []);
   useEffect(() => localStorage.setItem("theme", themeType), [themeType]);
   useDomClean();

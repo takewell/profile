@@ -1,3 +1,6 @@
+import { useMemo } from "react";
+import { useTheme } from "@zeit-ui/react";
+import { useConfigs } from "lib/config-context";
 import {
   Github,
   Instagram,
@@ -5,6 +8,8 @@ import {
   Facebook,
   Bold,
   Mail,
+  Sun,
+  Moon,
 } from "@zeit-ui/react-icons";
 
 const ServiceItem = ({ i, item }) => {
@@ -36,28 +41,48 @@ const ServiceItem = ({ i, item }) => {
   );
 };
 
-const Index = ({ links }) => (
-  <div>
-    <header id="header-site">
-      <div id="header-site-inner">
-        <h1>
-          @takewell
-          <span>
-            武井 勇也 (TAKEI Yuya) 1996.5.1
-            愛媛県松山市育ち、千葉市のファッションテックの会社で働いてます。
+const Index = ({ links }) => {
+  const theme = useTheme();
+  const configs = useConfigs();
+  const isDark = useMemo(() => theme.type === "light", [theme.type]);
+  const switchTheme = () => configs.onChange(theme.type === "light");
+  const themeTitle = "テーマ変更";
+
+  return (
+    <div>
+      <header id="header-site">
+        <div id="header-site-inner">
+          <h1>
+            @takewell
+            <span>
+              武井 勇也 (TAKEI Yuya) 1996.5.1
+              愛媛県松山市育ち、千葉市のファッションテックの会社で働いてます。
+            </span>
+          </h1>
+          <nav>
+            <ul>
+              {links.map((item, i) => {
+                return <ServiceItem i={i} item={item} key={i} />;
+              })}
+            </ul>
+          </nav>
+        </div>
+      </header>
+      {/* <div style={{ margin: "0 auto;" }}>
+        {isDark && (
+          <span title={themeTitle} onClick={switchTheme}>
+            <Sun size={16} />
           </span>
-        </h1>
-        <nav>
-          <ul>
-            {links.map((item, i) => {
-              return <ServiceItem i={i} item={item} key={i} />;
-            })}
-          </ul>
-        </nav>
-      </div>
-    </header>
-  </div>
-);
+        )}
+        {!isDark && (
+          <span title={themeTitle} onClick={switchTheme}>
+            <Moon size={16} />
+          </span>
+        )}
+      </div> */}
+    </div>
+  );
+};
 
 Index.getInitialProps = () => {
   const links = [
